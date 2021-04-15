@@ -1,22 +1,28 @@
-import axios from "axios";
-export function request(config)
-{
-  const instance = axios.create({
-    baseURL: "http://152.136.185.210:8000/api/n3",
-    timeout: 10000,
-  });
-  instance.interceptors.request.use(config => {
-    // console.log(config);
-    return config;
-  },error => {
-    console.log(error);
-  });
+import axios from 'axios'
 
-  instance.interceptors.response.use(res => {
-    // console.log(res.data);
-    return res.data;
-  },error => {
-    console.log(error);
+// request 函数返回一个 axios 的实例
+export function request(config) {
+  const instance = axios.create({
+    baseURL: "http://152.136.185.210:8000/api/w6"
   })
-  return instance(config);
+
+  // 拦截器将响应信息中的 data 对象返回了下来
+  instance.interceptors.response
+    .use(res => {
+      console.log(res)
+      return res.data
+    }, error => {
+      console.log(error)
+    })
+
+  // 这个没什么用，但是可以看到发送请求时的输出
+  instance.interceptors.request
+    .use(req => {
+      console.log(req)
+      return req
+    },error => {
+      console.log(error)
+    })
+
+  return instance(config)
 }

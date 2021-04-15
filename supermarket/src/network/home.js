@@ -1,18 +1,21 @@
-import {request} from "@/network/request";
+import {request} from './request'
 
-export function getHomeMultipleData() {
+export function getHomeMultidataData(){
   return request({
-    url: "/home/multidata",
+    url: "/home/multidata"
+  }).then(res=>{
+    return res.data
   })
 }
 
-export function getHomeGoods(type,page) {
+export function getHomeGoods(type, page){
   return request({
     url: "/home/data",
     params: {
       type,
       page
     }
+  }).then( res => {
+    return res.data
   })
-
 }

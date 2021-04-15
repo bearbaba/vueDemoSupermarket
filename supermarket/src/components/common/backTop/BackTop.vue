@@ -1,26 +1,21 @@
 <template>
-  <div class="back-top">
-    <img src="~assets/img/common/top.png">
+  <div>
+    <img src="../../../assets/img/home/arrow.png" />
   </div>
 </template>
 
 <script>
-  export default {
-    name: "BackTop.vue",
-    methods:{
-    }
-  }
+export default {
+  name: "BackTop",
+};
 </script>
 
 <style scoped>
-  .back-top{
-    position: fixed;
-    bottom: 60px;
-    right: 30px;
-    z-index: 20;
-  }
-  .back-top img{
-    width: 30px;
-    height: 30px;
-  }
+div {
+  margin: auto;
+}
+img {
+  width: 1.8em;
+  margin: 0.35em;
+}
 </style>

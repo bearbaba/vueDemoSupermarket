@@ -1,26 +1,24 @@
 <template>
   <div id="app">
-    <keep-alive exclude="detail">
-      <router-view class="main"></router-view>
+    <keep-alive exclude="Detail">
+      <router-view></router-view>
     </keep-alive>
-    <main-tabbar></main-tabbar>
+    <MainTabBar id="MainTabBar"></MainTabBar>
   </div>
 </template>
 
 <script>
-
-import MainTabbar from "./components/content/MainTabbar";
-
+import MainTabBar from "./components/content/mainTabBar/MainTabBar";
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    MainTabbar
+    MainTabBar,
   },
-}
+};
 </script>
 
-<style>
-  .main{
-
-  }
+<style lang="scss" scoped>
+#app {
+  height: 100%;
+}
 </style>
